@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C7A1564-0E70-473E-B8B0-5264EA02017D}</ProjectGuid>
+    <ProjectGuid>{F61F8A19-9CD4-487C-8E9C-70364E1B0238}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TVProvider</RootNamespace>
-    <AssemblyName>TVProvider</AssemblyName>
+    <RootNamespace>DataLayer</RootNamespace>
+    <AssemblyName>DataLayer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,15 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\TVProject\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\TVProject\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,20 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factory\AbstractFactory.cs" />
-    <Compile Include="Factory\TVProviderFactory.cs" />
-    <Compile Include="Helpers\ProviderNameHelper.cs" />
-    <Compile Include="Models\CommentListResult.cs" />
-    <Compile Include="Models\CommentModel.cs" />
-    <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\MovieIds.cs" />
-    <Compile Include="Models\MovieListResult.cs" />
+    <Compile Include="Context\Context.cs" />
+    <Compile Include="Context\ContextInitializer.cs" />
+    <Compile Include="Context\IContext.cs" />
+    <Compile Include="Entities\FavouriteMovieEntity.cs" />
+    <Compile Include="Entities\FriendEntity.cs" />
+    <Compile Include="Entities\MovieEntity.cs" />
+    <Compile Include="Entities\Test2Entity.cs" />
+    <Compile Include="Entities\TestEntity.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provider\AbstractProvider.cs" />
-    <Compile Include="Provider\CompositeProvider.cs" />
-    <Compile Include="Provider\TmdbProvider.cs" />
-    <Compile Include="Provider\TraktProvider.cs" />
-    <Compile Include="Provider\ITVData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
